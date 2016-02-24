@@ -6,19 +6,18 @@ public class User {
 	public Long userid;
 
 
-	public String userName;
-
+	public String user_name;
 
 	public String passwd;
 
 
-	public long userPhone;
+	public long user_phone;
 	
 
 	public String email;
 
 
-	public int userType;
+	public int user_type;
 
 
 	public Long getUserid() {
@@ -31,13 +30,13 @@ public class User {
 	}
 
 
-	public String getUserName() {
-		return userName;
+	public String getUser_name() {
+		return user_name;
 	}
 
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 
@@ -51,13 +50,13 @@ public class User {
 	}
 
 
-	public long getUserPhone() {
-		return userPhone;
+	public long getUser_phone() {
+		return user_phone;
 	}
 
 
-	public void setUserPhone(long userPhone) {
-		this.userPhone = userPhone;
+	public void setUser_phone(long user_phone) {
+		this.user_phone = user_phone;
 	}
 
 
@@ -71,14 +70,15 @@ public class User {
 	}
 
 
-	public int getUserType() {
-		return userType;
+	public int getUser_type() {
+		return user_type;
 	}
 
 
-	public void setUserType(int userType) {
-		this.userType = userType;
+	public void setUser_type(int user_type) {
+		this.user_type = user_type;
 	}
+
 
 
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coursemanager.mapper.UserMapper">
 
- <insert id="save " parameterType="User">
+ <insert id="save" parameterType="User">
      insert into user(userid,user_name,passwd,user_phone,email,user_type) values(#{userid},#{user_name},#{passwd},#{user_phone},#{email},#{user_type})
  </insert>
  

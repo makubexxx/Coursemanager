@@ -28,12 +28,29 @@ public class RegisterController {
 	public String checkUserName(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		
 		logger.info("into checkuser");
-		User user =registerService.findbyid(1140611109);
+		User user =registerService.findbyid(11406111019L);
 		
-			logger.info("user"+user.getUserName());
+			logger.info("user"+user.getUser_name());
 		
 		return null;
 	}
+	
+	@RequestMapping(value="/save",method = RequestMethod.GET)
+	public String saveUser(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		
+		User user = new User();
+		user.setUserid(11406111019L);
+		user.setEmail("sasdasd");
+		user.setPasswd("1234");
+		user.setUser_name("hhee");
+		user.setUser_type(1);
+		user.setUser_phone(1111232323L);
+
+		registerService.insert(user);
+		
+		return null;
+	}
+	
 	
 	
 /*	@RequestMapping(value="/register/successed")
