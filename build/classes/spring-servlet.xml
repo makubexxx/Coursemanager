@@ -17,7 +17,8 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />  
    <!-- 静态资源访问（不拦截此目录下的东西的访问） -->    
     <mvc:annotation-driven />    
-    <mvc:resources location="/WEB-INF//js/"  mapping="/js/**" /> 
+    <mvc:resources location="/WEB-INF/js/"  mapping="/js/**" /> 
+    <mvc:resources location="/WEB-INF/assets/"  mapping="/assets/**" /> 
     <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"  
         p:prefix="/WEB-INF/views/" p:suffix=".jsp"/>  

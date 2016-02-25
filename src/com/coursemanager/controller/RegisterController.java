@@ -20,7 +20,7 @@ public class RegisterController {
 	@Resource
 	private IRegisterService registerService;	
 	
-	@RequestMapping({"/register","/"})
+	@RequestMapping("/register")
 	public String register(){  
 		return "register";
 	}

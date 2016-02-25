@@ -23,12 +23,12 @@ public class LoginController {
 	private static Logger logger = Logger.getLogger(LoginController.class);    
 	@Resource
 	private ILoginService loginService;	
-	@RequestMapping(value="/login",method = RequestMethod.GET)
+	@RequestMapping(value="/login",method = RequestMethod.POST)
 	public String login(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		Long userid =Long.parseLong(request.getParameter("userid"));
+		String userid =request.getParameter("userid");
 		String passwd =request.getParameter("passwd");
 		logger.info("getparams>>>>>"+"userid:"+userid+"----"+"passwd:"+passwd);
-		logger.info("result:"+loginService.login(userid, passwd));
+		/*logger.info("result:"+loginService.login(userid, passwd));*/
      
 		return null;
 }

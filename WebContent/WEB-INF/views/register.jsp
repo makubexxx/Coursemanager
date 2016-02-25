@@ -6,67 +6,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.11.3.min.js" ></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/registerCheck.js" ></script>
-<title>Ajax+SpringMVC+Spring+MyBatis+Mysql注册验证实例</title>
-</head>
+<<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+<title>Insert title here</title>  
+<script type="text/javascript">  
+    i = 1;  
+    j = 1;  
+    $(document).ready(function(){  
+          
+        $("#btn_add1").click(function(){  
+            document.getElementById("newUpload1").innerHTML+='<div id="div_'+i+'"><input  name="file" type="file"  /><input type="button" value="删除"  onclick="del_1('+i+')"/></div>';  
+              i = i + 1;  
+        });  
+          
+        $("#btn_add2").click(function(){  
+            document.getElementById("newUpload2").innerHTML+='<div id="div_'+j+'"><input  name="file_'+j+'" type="file"  /><input type="button" value="删除"  onclick="del_2('+j+')"/></div>';  
+              j = j + 1;  
+        });  
+    });  
+  
+    function del_1(o){  
+     document.getElementById("newUpload1").removeChild(document.getElementById("div_"+o));  
+    }  
+      
+    function del_2(o){  
+         document.getElementById("newUpload2").removeChild(document.getElementById("div_"+o));  
+    }  
+  
+</script>  
+</head>  
 <body>  
-<div id="reg">  
-<FORM name="formUser"  action="<%=request.getContextPath()%>/register/successed"  method=post>  
-  <BR>  
-  <TABLE width="100%" align=center border=0>  
-    <TBODY>  
-      <TR>  
-        <TD align=right width="15%"><STRONG>用户名:</STRONG></TD>  
-        <TD width="57%"><INPUT id="username" onBlur="checkUserName(this)"   
-      name="username">  
-            <SPAN id="username_notice" >*</SPAN></TD>  
-      </TR>  
-      <TR>  
-        <TD align=right><STRONG>邮箱:</STRONG></TD>  
-        <TD><INPUT id="email" onBlur="checkEmail(this)" name="email">  
-            <SPAN id=email_notice >*</SPAN></TD>  
-      </TR>  
-      <TR>  
-        <TD align=right><STRONG>密码:</STRONG></TD>  
-        <TD><INPUT id="password" onBlur="checkPassword(this)"   
-      onkeyup="checkIntensity(this.value)" type="password" name="password">  
-            <SPAN   
-      id=password_notice >*</SPAN></TD>  
-      </TR>  
-      <TR>  
-        <TD align=right><STRONG>密码强度:</STRONG></TD>  
-        <TD><TABLE cellSpacing=0 cellPadding=1 width=145 border=0>  
-          <TBODY>  
-            <TR align=middle>  
-              <TD id=pwd_lower width="33%">弱</TD>  
-              <TD id=pwd_middle width="33%">中</TD>  
-              <TD id=pwd_high width="33%">强</TD>  
-            </TR>  
-          </TBODY>  
-        </TABLE></TD>  
-      </TR>  
-      <TR>  
-        <TD align=right><STRONG>确认密码:</STRONG></TD>  
-        <TD><INPUT id="conform_password" onBlur="checkConformPassword(this)"   
-      type="password" name="confirm_password">  
-            <SPAN id=conform_password_notice >*</SPAN></TD>  
-      </TR>  
-      <TR>  
-        <TD> </TD>  
-        <TD><LABEL>  
-          <INPUT type="checkbox" id="agreement" onclick="checkAgreement(this)">  
-          <B>我已看过并接受《<a href="#">用户协议</a>》<SPAN id=agreement_notice >*</SPAN></B></LABEL></TD>  
-      </TR>  
-      <TR>  
-        <TD  ><INPUT type=hidden value=act_register name=act></TD>  
-        <TD  ><input type=submit value=确认注册    name="Submit1" class="anniu" disabled></TD>  
-      </TR>  
-       <a href="<%=request.getContextPath()%>/js/registerCheck.js" >link</a>
-      <TR>  
-        <TD colSpan=2> </TD>  
-      </TR>  
-    </TBODY>  
-  </TABLE>  
-</FORM>  
-</div>           
-</body>
-</html>
+ 
+     <h1>springMVC包装类上传文件</h1>   
+    <form name="userForm2" action="/CourseManager/file/upload" enctype="multipart/form-data" method="post"">  
+        <div id="newUpload2">  
+            <input type="file" name="file">  
+        </div>  
+        <input type="button" id="btn_add2" value="增加一行" >  
+        <input type="submit" value="上传" >  
+          
+          
+    </form>   
+</body>  
+</html>  
