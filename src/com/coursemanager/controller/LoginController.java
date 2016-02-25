@@ -25,7 +25,10 @@ public class LoginController {
 	private ILoginService loginService;	
 	@RequestMapping(value="/login",method = RequestMethod.GET)
 	public String login(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		logger.info("result:"+loginService.login(11406111019L, "1234"));
+		Long userid =Long.parseLong(request.getParameter("userid"));
+		String passwd =request.getParameter("passwd");
+		logger.info("getparams>>>>>"+"userid:"+userid+"----"+"passwd:"+passwd);
+		logger.info("result:"+loginService.login(userid, passwd));
      
 		return null;
 }
