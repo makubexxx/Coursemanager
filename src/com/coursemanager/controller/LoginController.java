@@ -28,7 +28,10 @@ public class LoginController {
 		String userid =request.getParameter("userid");
 		String passwd =request.getParameter("passwd");
 		logger.info("getparams>>>>>"+"userid:"+userid+"----"+"passwd:"+passwd);
-		/*logger.info("result:"+loginService.login(userid, passwd));*/
+		if(loginService.login(Long.parseLong(userid), passwd)==true)
+		{
+			return "studentmain";
+		}
      
 		return null;
 }
