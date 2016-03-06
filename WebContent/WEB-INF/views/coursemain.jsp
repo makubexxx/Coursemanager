@@ -21,10 +21,9 @@
 </head>
 <body>
 
-
 <header class="am-topbar admin-header">
   <div class="am-topbar-brand">
-    <strong>CDUESTC</strong> <small>在线课程管理系统</small>
+    <strong>选中课程</strong> <small>${choiceCourse.coursename}</small>
   </div>
 
   <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
@@ -50,12 +49,15 @@
   <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
       <ul class="am-list admin-sidebar-list">
-        <li><a  href="/CourseManager/allcourse" target="content_frame" ><span class="am-icon-home"></span> 我的课程</a></li>
-        <li><a href="/CourseManager/userinfo" target="content_frame" ><span class="am-icon-table"></span> 个人资料</a></li>
-        <li><a href="http://www.cduestc.cn/newgt/index.html" target="content_frame" ><span class="am-icon-table"></span>校园快讯</a></li>
+        <li><a href="/CourseManager/coursenoticelist" target="content_frame" ><span class="am-icon-table"></span> 课程公告</a></li>
+        <li><a href="/CourseManager/coursedetail?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程信息</a></li>
+        <li><a href="/CourseManager/coursedocumentlist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程文件</a></li>
+        <li><a href="/CourseManager/teachresourcelist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>教学资源</a></li>
+        <li><a href="http://wlxt.cduestc.cn/infor/column/notice" target="content_frame" ><span class="am-icon-table"></span>课程作业</a></li>
+        <li><a href="http://wlxt.cduestc.cn/infor/column/notice" target="content_frame" ><span class="am-icon-table"></span>课程答疑</a></li>
+        <li><a href="/CourseManager/coursediscusslist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程讨论</a></li>
       </ul>
-
-      <div class="am-panel am-panel-default admin-sidebar-panel">
+           <div class="am-panel am-panel-default admin-sidebar-panel">
         <div class="am-panel-bd">
           <p><span class="am-icon-bookmark"></span> 友情链接</p>
                 <ul>
@@ -76,6 +78,8 @@
 
         </div>
       </div>
+      
+      
 
       <div class="am-panel am-panel-default admin-sidebar-panel">
         <div class="am-panel-bd">
@@ -89,7 +93,7 @@
     <!-- content start -->
   <div class="admin-content">
       <!--iFrame自适应宽度和高度！ -->
-      <iframe id="content_frame" name="content_frame" width=100% onload="this.height=content_frame.document.body.scrollHeight;this.width=content_frame.document.body.scrollWidth" marginwidth=0 marginheight=0 scrolling="no" src="/CourseManager/allcourse"frameborder=0 ></iframe>
+      <iframe id="content_frame" name="content_frame" width=100% onload="this.height=content_frame.document.body.scrollHeight;this.width=content_frame.document.body.scrollWidth" marginwidth=0 marginheight=0 scrolling="no" src="/CourseManager/coursenoticelist"frameborder=0 ></iframe>
 
 </div>
 </div>

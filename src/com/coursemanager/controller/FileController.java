@@ -1,7 +1,5 @@
 package com.coursemanager.controller;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.servlet.ModelAndView;
 
 /** 
  * @author mxs 
@@ -75,7 +72,7 @@ public class FileController {
 	        response.setHeader("Content-Disposition", "attachment;fileName="
 	                + fileName);
 	        try {
-	        	 String path = "D:/";  
+	        	 String path = "D:/Coursemanager";  
 	            InputStream inputStream = new FileInputStream(new File(path
 	                    + File.separator + fileName));
 	 

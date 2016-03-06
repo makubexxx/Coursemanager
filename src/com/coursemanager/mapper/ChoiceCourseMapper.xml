@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coursemanager.mapper.ChoiceCourseMapper">
+
+ 
+ 	<!--  查询学生全部选择课程  -->  
+    <select id="findByuserid" parameterType="int" resultType="ChoiceCourse">  
+       select * from choicecourse where userid = #{userid}  order by start_date DESC
+    </select>  
+    	<!--  查询学生选择的具体一门课程  -->  
+    <select id="findDetailcourse" parameterType="int" resultType="ChoiceCourse">  
+       select * from choicecourse where choiceid = #{choiceid}  order by start_date DESC
+    </select> 
+ </mapper>

@@ -29,8 +29,7 @@ public class RegisterController {
 		
 		logger.info("into checkuser");
 		User user =registerService.findbyid(11406111019L);
-		
-			logger.info("user"+user.getUser_name());
+       logger.info("user"+user.getUser_name());
 		
 		return null;
 	}

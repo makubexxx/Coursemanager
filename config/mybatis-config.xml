@@ -7,6 +7,13 @@
 <!--        配置映射类的别名 -->
  	<typeAliases>
       <typeAlias alias="User" type="com.coursemanager.model.User"/> 
+      <typeAlias alias="ChoiceCourse" type="com.coursemanager.model.ChoiceCourse"/> 
+      <typeAlias alias="Coursenotice" type="com.coursemanager.model.Coursenotice"/> 
+      <typeAlias alias="Coursedetail" type="com.coursemanager.model.Coursedetail"/> 
+      <typeAlias alias="Coursedocument" type="com.coursemanager.model.Coursedocument"/> 
+      <typeAlias alias="Teachresource" type="com.coursemanager.model.Teachresource"/> 
+      <typeAlias alias="Coursediscuss" type="com.coursemanager.model.Coursediscuss"/> 
+      
    </typeAliases>  
 
 </configuration>
