@@ -64,20 +64,6 @@ create table teachresource (
   
   
   
-  //课程作业
-  
-  
-  create table coursework (
-  courseworkid              integer auto_increment not null,
-  belongcourseid            varchar(255),
-  courseworktitle           varchar(255),
-  start_date                timestamp NULL,
-  end_date                  timestamp NULL,
-  staue                     varchar(255),
-  courseworkworkmanager     integer,
-  constraint pk_coursework primary key (courseworkid)) ENGINE=InnoDB DEFAULT CHARSET=gbk; 
-  
-  
   
   
   
@@ -86,12 +72,13 @@ create table teachresource (
 create table coursediscuss (
   coursediscussid           integer auto_increment not null,
   coursediscusstitile       varchar(50) not null,
-  belongcourseid            varchar(50) not null,
+  belongcourseid            integer,
   bycreate                  varchar(255),
   onclick                   integer,
   response                  integer,
   pushtime                  datetime,
   constraint pk_coursediscuss primary key (coursediscussid)) ENGINE=InnoDB DEFAULT CHARSET=gbk; 
+  alter table coursediscuss add column coursediscusscontent varchar(255) not null after coursediscusstitile;
   
   
   //课程讨论回复
@@ -104,5 +91,20 @@ create table coursediscuss (
   reply_content             TEXT,
   reply_date                timestamp NULL,
   constraint pk_Coursereply primary key (coursereplyid)) ENGINE=InnoDB DEFAULT CHARSET=gbk; 
+  
 
 
+//作业列表
+
+create table courserwork (
+  courseworkid              integer auto_increment not null,
+  belongcourseid            varchar(255),
+  courseworktitle           varchar(255),
+  coursework_content        TEXT,
+  start_date                timestamp NULL,
+  end_date                  timestamp NULL,
+  statue                    integer,
+  constraint pk_Coursereply primary key (courseworkid)) ENGINE=InnoDB DEFAULT CHARSET=gbk; 
+   alter table courserwork add column userid integer not null after belongcourseid;
+   alter table courserwork add column attachment  varchar(255) not null after statue;
+   alter table courserwork add column  score integer not null after attachment;

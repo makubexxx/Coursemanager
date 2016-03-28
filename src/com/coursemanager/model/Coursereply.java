@@ -21,10 +21,10 @@ public class Coursereply {
 	public String   replyuser;
 	
 
-	public String   replyContent;
+	public String   reply_content;
 
 	
-	public Date replyDate;
+	public Date reply_date;
 
 
 	public int getCoursereplyid() {
@@ -57,24 +57,27 @@ public class Coursereply {
 	}
 
 
-	public String getReplyContent() {
-		return replyContent;
+	public String getReply_content() {
+		return reply_content;
 	}
 
 
-	public void setReplyContent(String replyContent) {
-		this.replyContent = replyContent;
+	public void setReply_content(String reply_content) {
+		this.reply_content = reply_content;
 	}
 
 
-	public Date getReplyDate() {
-		return replyDate;
+	public Date getReply_date() {
+		return reply_date;
 	}
 
 
-	public void setReplyDate(Date replyDate) {
-		this.replyDate = replyDate;
+	public void setReply_date(Date reply_date) {
+		this.reply_date = reply_date;
 	}
+
+
+
 	
 	
 	

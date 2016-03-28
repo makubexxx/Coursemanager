@@ -11,6 +11,6 @@ import com.coursemanager.model.ChoiceCourse;
 public interface ChoiceCourseMapper {
 
 	
-	List<ChoiceCourse> findByuserid (int userid);
+	List<ChoiceCourse> findByuserid (long userid);
 	ChoiceCourse  findDetailcourse(int choiceid);
 }

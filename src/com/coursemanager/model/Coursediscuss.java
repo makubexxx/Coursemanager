@@ -19,6 +19,8 @@ public class Coursediscuss {
 
 	public String 	bycreate;
 	
+	public String coursediscusscontent;
+	
 	public int onclick;
 	
 	
@@ -96,6 +98,16 @@ public class Coursediscuss {
 
 	public void setPushtime(Date pushtime) {
 		this.pushtime = pushtime;
+	}
+
+
+	public String getCoursediscusscontent() {
+		return coursediscusscontent;
+	}
+
+
+	public void setCoursediscusscontent(String coursediscusscontent) {
+		this.coursediscusscontent = coursediscusscontent;
 	}
 	
 	

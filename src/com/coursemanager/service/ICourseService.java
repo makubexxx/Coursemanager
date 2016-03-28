@@ -12,7 +12,7 @@ import com.sun.org.apache.xml.internal.security.Init;
 public interface ICourseService {
 
 	
-	public List<ChoiceCourse> getallcoursebyuserid(int userid);
+	public List<ChoiceCourse> getallcoursebyuserid(long userid);
 	
 	public ChoiceCourse getdetailcourse(int choiceid);
 }

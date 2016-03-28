@@ -1,5 +1,7 @@
+<%@page import="com.coursemanager.model.User"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -51,6 +53,16 @@
         </form>
       </div>
 
+    <% User user =(User) request.getAttribute("user");
+    if(user.getUser_type()==10)
+    {
+    	out.print("<div class=\"am-cf am-padding\"><div class=\"am-fl am-cf\"><strong class=\"am-text-primary am-text-lg\">发布公告</strong></div></div>");
+    	out.print("<form class=\"am-form am-form-horizontal\">");
+    	out.print("<div class=\"am-form-group\"><div class=\"am-u-sm-9\"><textarea class=\"\" rows=\"5\" id=\"noticecontent\"></textarea></div></div>");
+    	out.print("<div class=\"am-form-group\"><div class=\"am-u-sm-9 am-u-sm-push-3\"><button type=\"submit\" class=\"am-btn am-btn-primary\">提交</button></div></div>");
+        out.print("</form>");
+    }
+    %>
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.coursemanager.service;
 
+import com.coursemanager.model.User;
+
 
 /**
  * @author mxs E-mail:308348194@qq.com
@@ -9,4 +11,5 @@ public interface ILoginService {
 
 	public  boolean login(long userid,String passwd);
 
+	public  User findUserbyid(long userid);
 }

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.coursemanager.model.ChoiceCourse;
 import com.coursemanager.model.Coursedetail;
 import com.coursemanager.model.Coursenotice;
+import com.coursemanager.model.User;
 import com.coursemanager.service.ICourseService;
 import com.coursemanager.service.ICoursedetailService;
 import com.coursemanager.service.ICoursenoticeService;
@@ -40,9 +41,8 @@ public class CourseController {
 	//获取全部课程
 	@RequestMapping(value="/allcourse",method = RequestMethod.GET)
 	public ModelAndView  allcourse(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		String userid =(String) request.getSession().getAttribute("userid");
-		logger.info("session userid:"+userid);		
-        List<ChoiceCourse> courselist =courseService.getallcoursebyuserid(Integer.parseInt(userid));
+		User user =(User) request.getSession().getAttribute("user");
+        List<ChoiceCourse> courselist =courseService.getallcoursebyuserid(user.getUserid());
         logger.info("course:"+courselist.get(0).getCoursename());
         ModelAndView modelAndView = new ModelAndView();  
         modelAndView.addObject("courselist", courselist);  
@@ -50,12 +50,25 @@ public class CourseController {
         modelAndView.setViewName("choiceedcourselist");  
         return modelAndView;  
 }
+	
+	
+	//获取该老师授课列表
+	@RequestMapping(value="/teachcourselist",method = RequestMethod.GET)
+	public ModelAndView  teachcourselist(HttpServletRequest request, HttpServletResponse response) throws IOException{	
+		User user =(User) request.getSession().getAttribute("user");	
+        List<ChoiceCourse> courselist =courseService.getallcoursebyuserid(user.getUserid());
+        logger.info("course:"+courselist.get(0).getCoursename());
+        ModelAndView modelAndView = new ModelAndView();  
+        modelAndView.addObject("courselist", courselist);  
+        modelAndView.addObject("choiceedcoursenumber",courselist.size());
+        modelAndView.setViewName("teachcourselist");  
+        return modelAndView;  
+}
 	//选择具体课程
 	@RequestMapping(value="/course",method = RequestMethod.GET)
 	public ModelAndView  coursemain(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		String userid =(String) request.getSession().getAttribute("userid");		
+		User user =(User) request.getSession().getAttribute("user");		
 		String choiceid =request.getParameter("choiceid");
-		logger.info("session userid:"+userid+"choiceid:"+choiceid);
         ModelAndView modelAndView = new ModelAndView();  
         ChoiceCourse choiceCourse =courseService.getdetailcourse(Integer.parseInt(choiceid));
 		HttpSession session =request.getSession();
@@ -65,14 +78,29 @@ public class CourseController {
         return modelAndView;  
 }
 	
+	
+	//选择具体课程
+	@RequestMapping(value="/teachcourse",method = RequestMethod.GET)
+	public ModelAndView  teachcoursemain(HttpServletRequest request, HttpServletResponse response) throws IOException{			
+		String choiceid =request.getParameter("choiceid");
+        ModelAndView modelAndView = new ModelAndView();  
+        ChoiceCourse choiceCourse =courseService.getdetailcourse(Integer.parseInt(choiceid));
+		HttpSession session =request.getSession();
+		session.setAttribute("courseid", choiceCourse.getCourseid());
+        modelAndView.addObject("choiceCourse", choiceCourse); 
+        modelAndView.setViewName("teachcoursemain");
+        return modelAndView;  
+}
 	//课程公告列表
 	@RequestMapping(value="/coursenoticelist",method = RequestMethod.GET)
 	public ModelAndView  coursenoticelist(HttpServletRequest request, HttpServletResponse response) throws IOException{			
 		int courseid = (Integer) request.getSession().getAttribute("courseid");
+		User user =(User) request.getSession().getAttribute("user");		
 		logger.info("courseid:"+courseid);
         ModelAndView modelAndView = new ModelAndView();  
         List<Coursenotice>  coursenoticelist =Coursenoticeservice.getallcoursenoticebycourseid(courseid);
         modelAndView.addObject("coursenoticelist", coursenoticelist); 
+        request.setAttribute("user", user);
         modelAndView.setViewName("coursenoticelist");
         return modelAndView;  
 }

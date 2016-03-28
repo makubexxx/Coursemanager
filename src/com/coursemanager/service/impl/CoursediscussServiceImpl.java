@@ -30,7 +30,13 @@ public class CoursediscussServiceImpl implements ICoursediscussService{
 	@Override
 	public void insert(Coursediscuss coursediscuss) {
 		// TODO Auto-generated method stub
-		
+		coursediscussMapper.save(coursediscuss);
+	}
+
+	@Override
+	public Coursediscuss findCoursediscussbyCoursediscussid(int Coursediscussid) {
+		// TODO Auto-generated method stub
+		return coursediscussMapper.findbyCoursediscussid(Coursediscussid);
 	}
 
 }

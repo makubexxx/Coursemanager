@@ -38,7 +38,7 @@
 
         <tr>
               <td>${ status.index + 1}</td> 
-              <td><a href="${coursediscuss.coursediscussid}">${coursediscuss.coursediscusstitile}</a></td>
+              <td><a href="/CourseManager/coursereplydetail?coursediscussid=${coursediscuss.coursediscussid}">${coursediscuss.coursediscusstitile}</a></td>
               <td class="am-hide-sm-only">${coursediscuss.bycreate}</td>
               <td>${coursediscuss.onclick}/${coursediscuss.response}</td>
               <td>${coursediscuss.pushtime}</td>
@@ -49,6 +49,24 @@
           </tbody>
         </table>
         </form>
+        
+        
+            <form class="am-form" action="/CourseManager/addcoursediscuss" method="get">
+  <fieldset>
+    <legend>发布主题</legend>
+       <div class="am-form-group">
+      <label for="doc-ipt-email-1">标题</label>
+      <input type="text" class="" id="doc-ipt-email-1" name="title" >
+    </div>
+        <div class="am-form-group">
+      <label for="doc-ta-1"></label>
+      主题内容<textarea class="" rows="5" id="doc-ta-1" name="content"></textarea>
+    </div>
+
+    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
+    </fieldset>
+    </form>
+    
       </div>
 
     </div>

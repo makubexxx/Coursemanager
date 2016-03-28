@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coursemanager.mapper.CourseworkMapper">
+
+ <insert id="save" parameterType="Coursework">
+     insert into courserwork (belongcourseid,courseworktitle,startDate,endDate,staue) values(#{belongcourseid},#{startDate},#{endDate},#{staue})
+ </insert>
+ 
+ 
+ 
+    <select id="findBycourseid"  resultType="Coursework">  
+       select * from  courserwork where belongcourseid  = #{0} and userid=#{1} 
+    </select>  
+    
+     
+    <select id="findByCourseworkid"  resultType="Coursework">  
+       select * from  courserwork where courseworkid  = #{0} 
+    </select>  
+    
+    <update id="update" >
+        
+        UPDATE courserwork  set statue  = #{0}, attachment=#{1}  WHERE courseworkid = #{2}
+        
+    </update>
+ </mapper>

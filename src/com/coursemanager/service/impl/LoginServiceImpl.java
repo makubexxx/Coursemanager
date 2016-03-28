@@ -34,5 +34,10 @@ public class LoginServiceImpl implements ILoginService{
 			return false;
 		}
 	}
+	@Override
+	public User findUserbyid(long userid) {
+		// TODO Auto-generated method stub
+		return userMapper.findById(userid);
+	}
 
 }

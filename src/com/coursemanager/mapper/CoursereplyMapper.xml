@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coursemanager.mapper.CoursereplyMapper">
+
+
+
+ <insert id="save" parameterType="Coursereply">
+     insert into coursereply (belongcoursediscussid,replyuser,reply_content,reply_date) values(#{belongcoursediscussid},#{replyuser},#{reply_content},#{reply_date})
+ </insert>
+ 
+    
+     <select id="findbybelongcoursediscussid" parameterType="int" resultType="Coursereply">  
+       select * from coursereply where belongcoursediscussid = #{belongcoursediscussid} 
+    </select> 
+ </mapper>

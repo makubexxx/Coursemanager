@@ -12,7 +12,9 @@
       <typeAlias alias="Coursedetail" type="com.coursemanager.model.Coursedetail"/> 
       <typeAlias alias="Coursedocument" type="com.coursemanager.model.Coursedocument"/> 
       <typeAlias alias="Teachresource" type="com.coursemanager.model.Teachresource"/> 
-      <typeAlias alias="Coursediscuss" type="com.coursemanager.model.Coursediscuss"/> 
+      <typeAlias alias="Coursereply" type="com.coursemanager.model.Coursereply"/> 
+      <typeAlias alias="Coursediscuss" type="com.coursemanager.model.Coursediscuss"/>
+      <typeAlias alias="Coursework" type="com.coursemanager.model.Coursework"/>  
       
    </typeAliases>  
 

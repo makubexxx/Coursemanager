@@ -19,7 +19,7 @@ public class CourseServiceImpl implements ICourseService{
 	 @Autowired
 	private ChoiceCourseMapper choiceCourseMapper;
 	@Override
-	public List<ChoiceCourse> getallcoursebyuserid(int userid) {
+	public List<ChoiceCourse> getallcoursebyuserid(long userid) {
 		// TODO Auto-generated method stub
 		return choiceCourseMapper.findByuserid(userid);
 	}

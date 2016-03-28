@@ -37,27 +37,33 @@ public class LoginController {
 		String userid =request.getParameter("userid");
 		String passwd =request.getParameter("passwd");
 		logger.info("getparams>>>>>"+"userid:"+userid+"----"+"passwd:"+passwd);
+	    User user = registerService.findbyid(Long.parseLong(userid));
 		
         ModelAndView modelAndView = new ModelAndView();  
-		if(loginService.login(Long.parseLong(userid), passwd)==true)
+        logger.info("flag"+user.getPasswd().equals(passwd)+"pwd:"+user.getPasswd());
+		if(user.getPasswd().equals(passwd))
 		{
 			HttpSession session =request.getSession();
-			session.setAttribute("userid", userid);
-	        modelAndView.addObject("userid", userid);  
-	        modelAndView.setViewName("studentmain");  
+			session.setAttribute("user", user);
+	        modelAndView.addObject("user", user);  
+	        if(user.getUser_type()==10)
+	        {
+	            modelAndView.setViewName("teachermain"); 
+	        }else if(user.getUser_type()==0) {
+	            modelAndView.setViewName("studentmain"); 
+			}
+	    
 	        return modelAndView;  
 		}
-     
-	      modelAndView.setViewName("error");  
+		else{
+	      modelAndView.setViewName("error");  }
 	       return modelAndView; 
 }
 	
 	
 	@RequestMapping(value="/userinfo",method = RequestMethod.GET)
 	public ModelAndView  showuserinfo(HttpServletRequest request, HttpServletResponse response) throws IOException{	
-		String userid =(String) request.getSession().getAttribute("userid");
-		logger.info("session userid:"+userid);		
-        User user = registerService.findbyid(Long.parseLong(userid));
+		User user =(User) request.getSession().getAttribute("user");	
         ModelAndView modelAndView = new ModelAndView();  
         modelAndView.addObject("user", user);  
         modelAndView.setViewName("userinfo");  

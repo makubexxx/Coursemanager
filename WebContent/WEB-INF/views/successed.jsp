@@ -3,13 +3,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户注册成功</title>
+<title>上传成功</title>
 </head>
 <body>
 <center>
-<h1><b>欢迎新用户</b></h1>
-用户名：${requestScope.username}<br>  
-邮箱：${requestScope.email}<br>  
+<h1><b>上传成功</b></h1>
+
 </center>
 </body>
 </html>

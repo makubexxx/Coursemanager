@@ -53,8 +53,7 @@
         <li><a href="/CourseManager/coursedetail?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程信息</a></li>
         <li><a href="/CourseManager/coursedocumentlist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程文件</a></li>
         <li><a href="/CourseManager/teachresourcelist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>教学资源</a></li>
-        <li><a href="http://wlxt.cduestc.cn/infor/column/notice" target="content_frame" ><span class="am-icon-table"></span>课程作业</a></li>
-        <li><a href="http://wlxt.cduestc.cn/infor/column/notice" target="content_frame" ><span class="am-icon-table"></span>课程答疑</a></li>
+        <li><a href="/CourseManager/courseworklist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程作业</a></li>
         <li><a href="/CourseManager/coursediscusslist?courseid=${choiceCourse.courseid}" target="content_frame" ><span class="am-icon-table"></span>课程讨论</a></li>
       </ul>
            <div class="am-panel am-panel-default admin-sidebar-panel">

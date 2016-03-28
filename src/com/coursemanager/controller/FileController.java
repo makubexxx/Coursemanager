@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Iterator;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.coursemanager.service.ICourseworkService;
+
 /** 
  * @author mxs 
  * @E-mail:308348194@qq.com 
@@ -25,9 +28,13 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 @Controller
 @RequestMapping("/file")  
 public class FileController {
+	@Resource
+	private ICourseworkService courseworkService;	
 
 	@RequestMapping("/upload"  )  
     public String upload(HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException {  
+	     String fileName=null;
+	    String courseworkid = request.getParameter("courseworkid");
         //创建一个通用的多部分解析器  
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
         //判断 request 是否有文件上传,即多部分请求  
@@ -48,9 +55,9 @@ public class FileController {
                     if(myFileName.trim() !=""){  
                         System.out.println(myFileName);  
                         //重命名上传后的文件名  
-                        String fileName = "demoUpload" + file.getOriginalFilename();  
+                         fileName =  file.getOriginalFilename();  
                         //定义上传路径  
-                        String path = "D:/" + fileName;  
+                        String path = "D:/Coursemanager/" + fileName;  
                         File localFile = new File(path);  
                         file.transferTo(localFile);  
                     }  
@@ -61,7 +68,11 @@ public class FileController {
             }  
               
         }  
-        return "/success";  
+        
+        //保存上传记录
+        courseworkService.update(1, fileName, Integer.parseInt(courseworkid));
+        
+        return "/successed";  
     }  
 	
 	   @RequestMapping("/download")
