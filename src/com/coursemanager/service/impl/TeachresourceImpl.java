@@ -26,9 +26,9 @@ public class TeachresourceImpl implements ITeachresourceService{
 	}
 
 	@Override
-	public void insert(Teachresource teachresource) {
+	public int insert(Teachresource teachresource) {
 		// TODO Auto-generated method stub
-		
+		return teachresourceMapper.save(teachresource);
 	}
 
 }

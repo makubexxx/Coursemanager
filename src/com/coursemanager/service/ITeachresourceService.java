@@ -14,5 +14,5 @@ public interface ITeachresourceService {
 	
 	public List<Teachresource> getteachresourcebycourseid(int courseid);
 	
-	public void insert(Teachresource teachresource);
+	public int insert(Teachresource teachresource);
 }

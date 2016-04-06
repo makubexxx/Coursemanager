@@ -17,8 +17,8 @@
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/amazeui.min.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css">
-      <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
-    <script src="<%=request.getContextPath()%>/js/coursenoticelist.js"></script>
+  <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
+  <script src="<%=request.getContextPath()%>/js/coursenoticelist.js"></script>
 </head>
 <body>
 

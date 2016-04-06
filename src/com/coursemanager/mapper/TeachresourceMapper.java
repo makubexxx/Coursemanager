@@ -2,6 +2,7 @@ package com.coursemanager.mapper;
 
 import java.util.List;
 
+import com.coursemanager.model.Coursenotice;
 import com.coursemanager.model.Teachresource;
 
 /**
@@ -12,4 +13,5 @@ public interface TeachresourceMapper {
 
 	
 	List<Teachresource> findbycourseid (int courseid);
+	int save(Teachresource teachresource);
 }

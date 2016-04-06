@@ -15,12 +15,14 @@
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/amazeui.min.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css">
+  <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
+  <script src="<%=request.getContextPath()%>/js/teachresource.js"></script>
   <base target="_blank">
 </head>
 <body>
 
  <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的课程</strong> </div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">教学资源</strong> </div>
     </div>
 
     <div class="am-g">
@@ -29,19 +31,17 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-   <th class="table-id">课程编号</th><th class="table-title">课程名称</th><th class="table-type">类别</th><th class="table-author am-hide-sm-only">作者</th><th class="table-date am-hide-sm-only">上课日期</th>
+   <th class="table-id">序号</th><th class="table-title">链接名称</th><th class="table-type">简要说明</th>
               </tr>
           </thead>
           <tbody>
           
-<c:forEach items="${courselist}" var="course" >
+<c:forEach items="${teachresourcelist}" var="teachresource" varStatus="status"  >
 
         <tr>
-              <td>${course.courseid}</td>
-              <td><a href="/CourseManager/teachcourse?choiceid=${course.choiceid}">${course.coursename}</a></td>
-              <td>default</td>
-              <td class="am-hide-sm-only">${course.teachername}</td>
-              <td class="am-hide-sm-only">${course.coursedate}</td>
+              <td>${ status.index + 1}</td> 
+              <td><a href="${teachresource.linkurl}">${teachresource.linkname}</a></td>
+              <td class="am-hide-sm-only">${teachresource.teachresourcedescription}</td>
               <td>
               </td>
             </tr>
@@ -50,12 +50,30 @@
 
           </tbody>
         </table>
-          <div class="am-cf">
-  共 ${choiceedcoursenumber} 条记录
-</div>
         </form>
       </div>
 
     </div>
+    
+    <form class="am-form">
+  <fieldset>
+    <legend>添加教学资源</legend>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-email-1">链接名称</label>
+      <input type="text" class=""  id="title" placeholder="输入链接名称">
+    </div>
+   <div class="am-form-group">
+      <label for="doc-ipt-email-1">链接地址</label>
+      <input type="text" class=""  id="link"  placeholder="输入链接地址">
+    </div>
+       <div class="am-form-group">
+      <label for="doc-ipt-email-1">简要说明</label>
+      <input type="text" class=""  id="description"placeholder="输入简要说明">
+    </div>
+
+    <p><input type="button" class="am-btn am-btn-default" id="submit" value="提交"/></p>
+  </fieldset>
+</form>
 </body>
 </html>
