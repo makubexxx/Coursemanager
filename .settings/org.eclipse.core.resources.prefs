@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/views/error.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/index.jsp=UTF-8
-encoding//WebContent/WEB-INF/views/studentmain.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/student/usermain.jsp=UTF-8
 encoding//src/com/coursemanager/util/DateHelper.java=UTF-8

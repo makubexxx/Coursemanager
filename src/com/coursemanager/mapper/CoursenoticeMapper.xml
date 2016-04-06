@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coursemanager.mapper.CoursenoticeMapper">
  <insert id="save" parameterType="Coursenotice" >
-     insert into coursenotice (courseid,noticetitle,noticecontext,byuser,userid,pushda_date) values(#{courseid},#{noticetitle},#{noticecontext},#{byuser},#{userid},#{pushdaDate})
+     insert into coursenotice (courseid,noticetitle,noticecontext,byuser,userid,pushda_date) values(#{courseid},#{noticetitle},#{noticecontext},#{byuser},#{userid},#{pushda_date})
  </insert>
 
  

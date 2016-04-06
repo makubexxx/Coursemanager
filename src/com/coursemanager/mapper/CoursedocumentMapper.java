@@ -10,7 +10,7 @@ import com.coursemanager.model.Coursedocument;
  */
 public interface CoursedocumentMapper {
 
-/*	void save(Coursedocument coursedocument);*/
+	int save(Coursedocument coursedocument);
 	
 	List<Coursedocument> findbycourseid (int courseid);
 }

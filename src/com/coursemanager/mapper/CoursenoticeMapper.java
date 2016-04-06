@@ -10,7 +10,7 @@ import com.coursemanager.model.Coursenotice;
  */
 public interface CoursenoticeMapper {
 
-	void save(Coursenotice coursenotice);
+	int save(Coursenotice coursenotice);
 	
 	List<Coursenotice> findBycourseid (int courseid);
 	

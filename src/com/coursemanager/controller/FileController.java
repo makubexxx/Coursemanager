@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import com.coursemanager.service.ICourseworkService;
+import com.coursemanager.util.Fileutil;
 
 /** 
  * @author mxs 
@@ -69,9 +70,6 @@ public class FileController {
               
         }  
         
-        //保存上传记录
-        courseworkService.update(1, fileName, Integer.parseInt(courseworkid));
-        
         return "/successed";  
     }  
 	
@@ -107,4 +105,6 @@ public class FileController {
 	            //java+getOutputStream() has already been called for this response
 	        return null;
 	    }
+	   
+
 }

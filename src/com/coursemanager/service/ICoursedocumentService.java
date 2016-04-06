@@ -13,5 +13,5 @@ public interface ICoursedocumentService {
 	
 	public List<Coursedocument> getallcoursedocumentbycourseid(int courseid);
 	
-	public void insert(Coursedocument coursedocument);
+	public int insert(Coursedocument coursedocument);
 }

@@ -16,7 +16,6 @@ public interface CoursediscussMapper {
 	List<Coursediscuss> findbycourseid (int courseid);
 	
 	Coursediscuss findbyCoursediscussid(int coursediscussid);
-	
 
-	void save(Coursediscuss coursediscuss);
+	int save(Coursediscuss coursediscuss);
 }

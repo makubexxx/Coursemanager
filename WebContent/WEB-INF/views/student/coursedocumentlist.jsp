@@ -15,14 +15,12 @@
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/amazeui.min.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css">
-      <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
-    <script src="<%=request.getContextPath()%>/js/coursediscusslist.js"></script>
   <base target="_blank">
 </head>
 <body>
 
  <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">课程讨论</strong> </div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的课程</strong> </div>
     </div>
 
     <div class="am-g">
@@ -31,19 +29,20 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-   <th class="table-id">序号</th><th class="table-title">主题</th><th class="table-type">作者</th><th class="table-type">点击/回复</th><th class="table-type">发表时间</th>
+   <th class="table-id">序号</th><th class="table-title">标题</th><th class="table-type">简要说明</th><th class="table-date am-hide-sm-only">上传时间</th>
               </tr>
           </thead>
           <tbody>
           
-<c:forEach items="${coursediscusslist}" var="coursediscuss" varStatus="status"  >
+<c:forEach items="${coursedocumentlist}" var="coursedocument" varStatus="status"  >
 
         <tr>
               <td>${ status.index + 1}</td> 
-              <td><a href="/CourseManager/coursereplydetail?coursediscussid=${coursediscuss.coursediscussid}">${coursediscuss.coursediscusstitile}</a></td>
-              <td class="am-hide-sm-only">${coursediscuss.bycreate}</td>
-              <td>${coursediscuss.onclick}/${coursediscuss.response}</td>
-              <td>${coursediscuss.pushtime}</td>
+              <td><a href="/CourseManager/Coursedocument/download?fileName=${coursedocument.doucumenturl}">${coursedocument.coursedocumenttitile}</a></td>
+              <td class="am-hide-sm-only">${coursedocument.coursedocument_description}</td>
+              <td class="am-hide-sm-only">${coursedocument.uploadtime}</td>
+              <td>
+              </td>
             </tr>
      </c:forEach>
 
@@ -51,24 +50,6 @@
           </tbody>
         </table>
         </form>
-        
-        
-            <form class="am-form">
-  <fieldset>
-    <legend>发布主题</legend>
-       <div class="am-form-group">
-      <label for="doc-ipt-email-1">标题</label>
-      <input type="text" class="" id="title" name="title" >
-    </div>
-        <div class="am-form-group">
-      <label for="doc-ta-1"></label>
-      主题内容<textarea class="" rows="5" id="content" name="content"></textarea>
-    </div>
-
-    <p><input type="button" class="am-btn am-btn-default" id="submit" value="提交"></p>
-    </fieldset>
-    </form>
-    
       </div>
 
     </div>

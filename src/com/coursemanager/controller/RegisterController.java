@@ -1,22 +1,10 @@
 package com.coursemanager.controller;
 
-import java.io.IOException;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.coursemanager.model.User;
-import com.coursemanager.service.IRegisterService;
 
 @Controller
 public class RegisterController {
-	private static Logger logger = Logger.getLogger(RegisterController.class);    
+	/*private static Logger logger = Logger.getLogger(RegisterController.class);    
 	@Resource
 	private IRegisterService registerService;	
 	
@@ -52,7 +40,7 @@ public class RegisterController {
 	
 	
 	
-/*	@RequestMapping(value="/register/successed")
+	@RequestMapping(value="/register/successed")
 	public ModelAndView  successed(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String username=(String)request.getParameter("username");	
 		String email=(String)request.getParameter("email");		

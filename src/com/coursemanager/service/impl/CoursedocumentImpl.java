@@ -25,7 +25,8 @@ public class CoursedocumentImpl implements ICoursedocumentService{
 	}
 
 	@Override
-	public void insert(Coursedocument coursedocument) {
+	public int insert(Coursedocument coursedocument) {
+		 return CoursedocumentMapper.save(coursedocument);
 		// TODO Auto-generated method stub
 		
 	}

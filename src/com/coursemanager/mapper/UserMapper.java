@@ -8,7 +8,7 @@ import com.coursemanager.model.User;
  */
 public interface UserMapper {
 
-	void save(User user);
-	boolean update(User user);
+	void adduser(User user);
+	void update(User user);
 	User findById(long userid);
 }

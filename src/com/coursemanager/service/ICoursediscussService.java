@@ -13,7 +13,7 @@ public interface ICoursediscussService {
 	
 	public List<Coursediscuss> getteachresourcebycourseid(int courseid);
 	
-	public void insert(Coursediscuss coursediscuss);
+	public int  addCoursediscuss(Coursediscuss coursediscuss);
 	
 	public Coursediscuss findCoursediscussbyCoursediscussid(int Coursediscussid);
 }

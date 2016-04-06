@@ -19,9 +19,9 @@ public class CoursenoticeImpl implements ICoursenoticeService {
     @Autowired
 	private CoursenoticeMapper coursenoticeMapper;
 	@Override
-	public void insert(Coursenotice coursenotice) {
+	public int insert(Coursenotice coursenotice) {
 		// TODO Auto-generated method stub
-		 coursenoticeMapper.save(coursenotice);;
+		return  coursenoticeMapper.save(coursenotice);
 	}
 
 

@@ -14,7 +14,7 @@
        select * from coursediscuss where belongcourseid = #{belongcoursediscussid} 
     </select> 
     
-      <insert id="save" parameterType="Coursediscuss">
+      <insert id="save" parameterType="Coursediscuss" keyProperty="coursediscussid" useGeneratedKeys="true">
      insert into Coursediscuss (coursediscusstitile,coursediscusscontent,belongcourseid,bycreate,onclick,response,pushtime) values(#{coursediscusstitile},#{coursediscusscontent},#{belongcourseid},#{bycreate},#{onclick},#{response},#{pushtime})
  </insert>
  </mapper>

@@ -20,7 +20,7 @@ public class Coursedocument {
 
 	
 
-	public String belongcourseid;
+	public int belongcourseid;
 	
 
 	public float documentsize;
@@ -49,11 +49,11 @@ public class Coursedocument {
 
 
 
-	public String getBelongcourseid() {
+	public int getBelongcourseid() {
 		return belongcourseid;
 	}
 
-	public void setBelongcourseid(String belongcourseid) {
+	public void setBelongcourseid(int belongcourseid) {
 		this.belongcourseid = belongcourseid;
 	}
 

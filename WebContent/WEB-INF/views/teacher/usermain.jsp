@@ -34,12 +34,8 @@
     <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
       <li class="am-dropdown" data-am-dropdown>
         <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-          <span class="am-icon-users"></span> 用户：${user.userid} <span class="am-icon-caret-down"></span>
+          <span class="am-icon-users"></span> 用户：${user.userid} 老师
         </a>
-        <ul class="am-dropdown-content">
-          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
-          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
-        </ul>
       </li>
     </ul>
   </div>
@@ -50,7 +46,8 @@
   <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
     <div class="am-offcanvas-bar admin-offcanvas-bar">
       <ul class="am-list admin-sidebar-list">
-        <li><a  href="/CourseManager/allcourse" target="content_frame" ><span class="am-icon-home"></span> 授课列表</a></li>
+        <li><a  href="/CourseManager/allcourse" target="content_frame" ><span class="am-icon-home"></span> 课程列表</a></li>
+          <li><a href="/CourseManager/userinfo" target="content_frame" ><span class="am-icon-table"></span> 个人资料</a></li>
       </ul>
 
       <div class="am-panel am-panel-default admin-sidebar-panel">

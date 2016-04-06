@@ -12,7 +12,7 @@ import com.coursemanager.model.Coursenotice;
 public interface ICoursenoticeService {
 
 	
-	public void insert(Coursenotice coursenotice);
+	public int insert(Coursenotice coursenotice);
 	
 	public List<Coursenotice> getallcoursenoticebycourseid(int courseid);
 	
