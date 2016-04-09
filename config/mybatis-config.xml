@@ -15,6 +15,8 @@
       <typeAlias alias="Coursereply" type="com.coursemanager.model.Coursereply"/> 
       <typeAlias alias="Coursediscuss" type="com.coursemanager.model.Coursediscuss"/>
       <typeAlias alias="Coursework" type="com.coursemanager.model.Coursework"/>  
+      <typeAlias alias="Courseworkupload" type="com.coursemanager.model.Courseworkupload"/>  
+      
       
    </typeAliases>  
 

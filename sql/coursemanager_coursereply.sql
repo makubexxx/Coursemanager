@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `coursemanager` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `coursemanager`;
--- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: localhost    Database: coursemanager
 -- ------------------------------------------------------
@@ -31,7 +29,7 @@ CREATE TABLE `coursereply` (
   `reply_content` text,
   `reply_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`coursereplyid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=gbk;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +38,7 @@ CREATE TABLE `coursereply` (
 
 LOCK TABLES `coursereply` WRITE;
 /*!40000 ALTER TABLE `coursereply` DISABLE KEYS */;
-INSERT INTO `coursereply` VALUES (1,'1','呵呵','老师讲的好','2014-08-31 16:00:00'),(2,'1','哈哈','老师讲的很详细','2014-08-31 16:00:00'),(3,'1','张三','老师讲的很清楚','2014-08-31 16:00:00'),(4,'1','李四','老师讲的很仔细','2014-08-31 16:00:00'),(5,'1','mxs','12344','2016-03-06 08:31:07');
+INSERT INTO `coursereply` VALUES (1,'1','呵呵','老师讲的好','2014-08-31 16:00:00'),(2,'1','哈哈','老师讲的很详细','2014-08-31 16:00:00'),(3,'1','张三','老师讲的很清楚','2014-08-31 16:00:00'),(4,'1','李四','老师讲的很仔细','2014-08-31 16:00:00'),(5,'1','mxs','12344','2016-03-06 08:31:07'),(6,'2','admin','学习心得','2016-04-07 07:35:45');
 /*!40000 ALTER TABLE `coursereply` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-28 22:18:03
+-- Dump completed on 2016-04-09 13:06:18

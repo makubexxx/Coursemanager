@@ -15,13 +15,13 @@
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/amazeui.min.css"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css">
-  
+   <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
+   <script src="<%=request.getContextPath()%>/js/coursework.js"></script>
   <base target="_blank">
 </head>
-<body>
-
+<body>   
  <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">我的课程</strong> </div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">课程作业</strong> </div>
     </div>
 
     <div class="am-g">
@@ -30,55 +30,57 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-   <th class="table-id">序号</th><th class="table-title">标题</th><th class="table-type">简要说明</th><th class="table-date am-hide-sm-only">上传时间</th>
+   <th class="table-title">作业题目</th><th class="table-title">生效日期</th><th class="table-type">截止日期</th><th class="table-type">提交状态</th>
               </tr>
           </thead>
           <tbody>
           
-<c:forEach items="${coursedocumentlist}" var="coursedocument" varStatus="status"  >
+<c:forEach items="${courseworklist}" var="coursework" varStatus="status"  >
 
         <tr>
-              <td>${ status.index + 1}</td> 
-              <td><a href="/CourseManager/file/download?fileName=${coursedocument.doucumenturl}">${coursedocument.coursedocumenttitile}</a></td>
-              <td class="am-hide-sm-only">${coursedocument.coursedocument_description}</td>
-              <td class="am-hide-sm-only">${coursedocument.uploadtime}</td>
-              <td>
-              </td>
-            </tr>
+              <td><a href="/CourseManager/courseworkdetail?courseworkid=${coursework.courseworkid}">${coursework.courseworktitle}</a></td>
+              <td class="am-hide-sm-only">${coursework.start_date}</td>
+              <td class="am-hide-sm-only">${coursework.end_date}</td>
+            </tr>  
      </c:forEach>
 
 
           </tbody>
         </table>
         </form>
+ 
+ 
+     <form class="am-form">
+  <fieldset>
+    <legend>发布作业</legend>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-email-1">作业题目</label>
+      <input type="text" class=""  id="title" placeholder="输入链接名称">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ta-1">作业内容</label>
+      <textarea class="" rows="5" id="content"></textarea>
+    </div>
+
+       <div class="am-form-group">
+      <label for="doc-ipt-email-1">开始时间</label>
+      <input type="date" class=""  id="startdate"placeholder="开始时间">
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ipt-email-1">结束时间</label>
+      <input type="date" class=""  id="enddate"placeholder="结束时间">
+    </div>
+
+    <p><input type="button" class="am-btn am-btn-default" id="submit" value="提交"/></p>
+  </fieldset>
+</form>       
+        
+    
       </div>
 
     </div>
-    
-    
-    <form class="am-form" method="post" action="/CourseManager/Coursedocument/upload" enctype="multipart/form-data">
-  <fieldset>
-    <legend>添加课件</legend>
-    <div class="am-form-group">
-      <label for="doc-ipt-email-1">标题</label>
-      <input type="text" class="" id="doc-ipt-email-1" placeholder="输入标题" name="titile">
-    </div>
-    <div class="am-form-group">
-      <label for="doc-ipt-email-1">描述</label>
-      <input type="text" class="" id="doc-ipt-email-1" placeholder="输入描述" name="description">
-    </div>
-
-
-
-    <div class="am-form-group">
-      <label for="doc-ipt-file-1">附件</label>
-      <input type="file" id="doc-ipt-file-1" name="file">
-      <p class="am-form-help">请选择要上传的文件...</p>
-    </div>
-    
-    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
-
-      </fieldset>
-      </form>
 </body>
 </html>

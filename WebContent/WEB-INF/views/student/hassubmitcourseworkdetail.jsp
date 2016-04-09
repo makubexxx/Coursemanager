@@ -32,7 +32,7 @@
       </div>
 
       <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-        <form class="am-form am-form-horizontal" action="/CourseManager/file/upload" method="post" enctype="multipart/form-data">
+        <form class="am-form am-form-horizontal" action="/CourseManager/coursework/upload" method="post" enctype="multipart/form-data">
         
              <div class="am-form-group">
             <label for="user-name" class="am-u-sm-3 am-form-label">作业题目</label>
@@ -58,29 +58,14 @@
         <div class="am-form-group">
       <label for="doc-ta-1"></label>
       <input name="coursediscussid" value="${coursediscuss.coursediscussid}" type="hidden">
-      <textarea class="" rows="5" id="doc-ta-1" name="content"></textarea>
+      <textarea class="" rows="5" id="doc-ta-1" name="content" readonly="readonly" >${courseworkupload.content}</textarea>
     </div>
     
-<div class="am-form-group am-form-file">
-  <button type="button" class="am-btn am-btn-danger am-btn-sm">
-    <i class="am-icon-cloud-upload"></i> 选择要上传的文件</button>
-  <input id="doc-form-file" type="file" name="file">
-  <input  name="courseworkid" value="${Coursework.courseworkid}" type="hidden">
-</div>
-<div id="file-list"></div>
-<script>
-  $(function() {
-    $('#doc-form-file').on('change', function() {
-      var fileNames = '';
-      $.each(this.files, function() {
-        fileNames += '<span class="am-badge">' + this.name + '</span> ';
-      });
-      $('#file-list').html(fileNames);
-    });
-  });
-</script>
+    <a class="am-btn am-btn-primary" href="${courseworkupload.attachment}">
+  <i class="am-icon-cloud-download"></i>
+  附件
+</a>
 
-    <p><button type="submit" class="am-btn am-btn-default">提交</button></p>
     </fieldset>
     </form>
     

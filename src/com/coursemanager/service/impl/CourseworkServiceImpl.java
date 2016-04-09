@@ -21,15 +21,15 @@ public class CourseworkServiceImpl implements ICourseworkService {
 	private CourseworkMapper courseworkMapper;
 
 	@Override
-	public List<Coursework> getCourseworkbycourseid(String courseid,int userid) {
+	public List<Coursework> getCourseworkbycourseid(String courseid) {
 		// TODO Auto-generated method stub
-		return courseworkMapper.findBycourseid(courseid, userid);
+		return courseworkMapper.findBycourseid(courseid);
 	}
 
 	@Override
-	public void insert(Coursework coursework) {
+	public int insert(Coursework coursework) {
 		// TODO Auto-generated method stub
-		 courseworkMapper.save(coursework);
+		return  courseworkMapper.save(coursework);
 		
 	}
 

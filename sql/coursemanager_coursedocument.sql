@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `coursemanager` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `coursemanager`;
--- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: localhost    Database: coursemanager
 -- ------------------------------------------------------
@@ -33,7 +31,7 @@ CREATE TABLE `coursedocument` (
   `uploadtime` datetime DEFAULT NULL,
   `doucumenturl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`coursedocumentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=gbk;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +40,7 @@ CREATE TABLE `coursedocument` (
 
 LOCK TABLES `coursedocument` WRITE;
 /*!40000 ALTER TABLE `coursedocument` DISABLE KEYS */;
-INSERT INTO `coursedocument` VALUES (1,'第1章 绪论','第1章 绪论','1',1024,'2014-09-01 00:00:00','demo.java');
+INSERT INTO `coursedocument` VALUES (1,'第1章 绪论','第1章 绪论','1',1024,'2014-09-01 00:00:00','demo.java'),(2,'测试','测试','1',NULL,'2016-04-05 17:12:11','oauth2.php'),(3,'测试2','测试2','1',NULL,'2016-04-05 17:13:55','get1.php');
 /*!40000 ALTER TABLE `coursedocument` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-28 22:18:03
+-- Dump completed on 2016-04-09 13:06:18

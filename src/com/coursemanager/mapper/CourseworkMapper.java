@@ -12,9 +12,9 @@ import com.coursemanager.model.Coursework;
  */
 public interface CourseworkMapper {
 
-	void save(Coursework coursework);
+	int save(Coursework coursework);
 	
-	List<Coursework> findBycourseid (String courseid ,int  userid);
+	List<Coursework> findBycourseid (String courseid );
 	
 	Coursework findByCourseworkid (int  Courseworkid);
 	

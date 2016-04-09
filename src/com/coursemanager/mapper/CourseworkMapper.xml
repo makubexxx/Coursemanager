@@ -3,13 +3,13 @@
 <mapper namespace="com.coursemanager.mapper.CourseworkMapper">
 
  <insert id="save" parameterType="Coursework">
-     insert into courserwork (belongcourseid,courseworktitle,startDate,endDate,staue) values(#{belongcourseid},#{startDate},#{endDate},#{staue})
+     insert into courserwork (belongcourseid,courseworktitle,start_date,end_date) values(#{belongcourseid},#{courseworktitle},#{start_date},#{end_date})
  </insert>
  
  
  
     <select id="findBycourseid"  resultType="Coursework">  
-       select * from  courserwork where belongcourseid  = #{0} and userid=#{1} 
+       select * from  courserwork where belongcourseid  = #{0}
     </select>  
     
      

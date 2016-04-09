@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coursemanager.mapper.CourseworkuploadMapper">
+
+ <insert id="save" parameterType="Courseworkupload">
+     insert into courseworkupload (courseworkid,userid,attachment,content) values(#{courseworkid},#{userid},#{attachment},#{content})
+ </insert>
+ 
+   
+     <select id="findBycourseidanduserid" parameterType="int" resultType="Courseworkupload">  
+       select * from courseworkupload where courseworkid = #{0} and userid= #{1}
+    </select> 
+ </mapper>

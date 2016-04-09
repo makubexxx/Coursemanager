@@ -11,9 +11,9 @@ import com.coursemanager.model.Coursework;
 public interface ICourseworkService {
 
 	
-	public List<Coursework> getCourseworkbycourseid(String courseid,int userid);
+	public List<Coursework> getCourseworkbycourseid(String courseid);
 	
-	public void insert(Coursework coursework);
+	public int insert(Coursework coursework);
 	
 	
 	public Coursework  getCourseworkbyCourseworkid(int Courseworkid);
