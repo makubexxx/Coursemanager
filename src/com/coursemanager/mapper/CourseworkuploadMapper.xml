@@ -10,4 +10,8 @@
      <select id="findBycourseidanduserid" parameterType="int" resultType="Courseworkupload">  
        select * from courseworkupload where courseworkid = #{0} and userid= #{1}
     </select> 
+    <update id="update">
+        
+        update courseworkupload set score=#{2}  where courseworkid = #{0} and userid= #{1}
+    </update>
  </mapper>

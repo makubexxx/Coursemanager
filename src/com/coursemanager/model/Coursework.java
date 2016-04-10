@@ -22,13 +22,19 @@ public class Coursework {
 	public String   courseworktitle;
 	
 	
-	
+	public String coursework_content;
 
 	public Date start_date;
 	
 
 	public Date end_date;
 
+	private String startdate;
+	
+	
+	private String enddate;
+	
+	private String statue;
 
 	public int getCourseworkid() {
 		return courseworkid;
@@ -77,6 +83,46 @@ public class Coursework {
 
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
+	}
+
+
+	public String getCoursework_content() {
+		return coursework_content;
+	}
+
+
+	public void setCoursework_content(String coursework_content) {
+		this.coursework_content = coursework_content;
+	}
+
+
+	public String getStartdate() {
+		return startdate;
+	}
+
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
+
+
+	public String getEnddate() {
+		return enddate;
+	}
+
+
+	public void setEnddate(String enddate) {
+		this.enddate = enddate;
+	}
+
+
+	public String getStatue() {
+		return statue;
+	}
+
+
+	public void setStatue(String statue) {
+		this.statue = statue;
 	}
 	
 

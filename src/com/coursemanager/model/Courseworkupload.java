@@ -15,6 +15,8 @@ public class Courseworkupload {
 	public String attachment;
 	
 	public int userid;
+	
+	public String score;
 
 	public int getCourseworkid() {
 		return courseworkid;
@@ -47,7 +49,16 @@ public class Courseworkupload {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+	}
+
+
 	
 	
 	

@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `coursemanager` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `coursemanager`;
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: coursemanager
 -- ------------------------------------------------------
@@ -39,7 +41,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (0,'admin','admin',123456789,'1637@163.com',10),(1,'2','3',4,'5',6),(2,'admin2','admin',0,'admin',0),(1140611109,'hehehenihaoa','mxs',18117842511,'308348194@qq.com',0),(11406111019,'hhee','1234',1111232323,'sasdasd',1);
+INSERT INTO `user` VALUES (0,'admin','admin',123456789,'1637@163.com',10),(1,'2','3',4,'5',6),(2,'admin2','admin',0,'admin',0),(1140611109,'hha','mxs',18117842511,'308348194@qq.com',0),(1140611110,'hhee','1234',1111232323,'sasdasd',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-09 13:06:19
+-- Dump completed on 2016-04-10  8:27:01

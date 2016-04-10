@@ -30,4 +30,12 @@ public class CourseServiceImpl implements ICourseService{
 		return choiceCourseMapper.findDetailcourse(choiceid);
 	}
 
+
+
+	@Override
+	public List<ChoiceCourse> getchoiceCoursebyCourseid(long courseid) {
+		// TODO Auto-generated method stub
+		return choiceCourseMapper.findBycourseid(courseid);
+	}
+
 }

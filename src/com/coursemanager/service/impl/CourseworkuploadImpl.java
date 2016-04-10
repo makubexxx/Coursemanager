@@ -31,4 +31,14 @@ public class CourseworkuploadImpl implements ICourseworkuploadService{
 		return courseworkuploadMapper.save(courseworkupload);
 	}
 
+
+
+
+
+	@Override
+	public int update(int courseworkid, int userid, String score) {
+		// TODO Auto-generated method stub
+		return courseworkuploadMapper.update(courseworkid, userid, score);
+	}
+
 }

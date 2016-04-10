@@ -13,4 +13,6 @@ public interface CourseworkuploadMapper {
 	int save(Courseworkupload courseworkupload);
 	
 	Courseworkupload findBycourseidanduserid (int courseworkid ,int userid);
+	
+	int update(int courseworkid ,int userid,String score);
 }

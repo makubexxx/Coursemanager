@@ -17,14 +17,40 @@
   <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/admin.css">
   <script src="<%=request.getContextPath()%>/assets/js/jquery.min.js"></script>
   <script src="<%=request.getContextPath()%>/assets/js/amazeui.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.js"></script>
+  <script src="<%=request.getContextPath()%>/js/score.js"></script>
 </head>
 <body>
     <div class="am-cf am-padding">
-      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">课程信息</strong> / <small>Course information</small></div>
+      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">作业详情 打分</strong> / <small>Course information</small></div>
     </div>
 
     <hr/>
 
+          <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                </th><th class="table-id">学号</th><th class="table-title">姓名</th><th class="table-title">得分</th>
+              </thead>
+              <tbody>
+              <tr>
+ 
+                <td>${workuploaduser.user.userid}</td>
+                <td>${workuploaduser.user.user_name}</td>
+                <td>${workuploaduser.score}</td>
+                   </tr>
+
+              </tbody>
+            </table>
+
+            <hr />
+          </form>
+        </div>
+
+      </div>
     <div class="am-g">
 
       <div class="am-u-sm-12 am-u-md-4 am-u-md-push-8">
@@ -71,6 +97,17 @@
     
       </div>
     </div>
+    <form class="am-form">
+  <fieldset>
+    <legend>添加教学资源</legend>
 
+    <div class="am-form-group">
+      <label for="doc-ipt-email-1">打分</label>
+      <input type="text" class=""  id="score" placeholder="请输入分数">
+
+
+    <p><input type="button" class="am-btn am-btn-default" id="submit" value="打分"/></p>
+  </fieldset>
+</form>
 </body>
 </html>

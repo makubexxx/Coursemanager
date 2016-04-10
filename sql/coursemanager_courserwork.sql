@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `coursemanager` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `coursemanager`;
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: coursemanager
 -- ------------------------------------------------------
@@ -30,7 +32,7 @@ CREATE TABLE `courserwork` (
   `start_date` timestamp NULL DEFAULT NULL,
   `end_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`courseworkid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=gbk;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=gbk;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `courserwork` (
 
 LOCK TABLES `courserwork` WRITE;
 /*!40000 ALTER TABLE `courserwork` DISABLE KEYS */;
-INSERT INTO `courserwork` VALUES (1,'1','第1章课后作业','1. 比较单道批处理OS、多道批处理OS、分时OS、实时OS的主要特征。 2. OS有哪些几大特征？其最基本的特征什么？','2013-03-04 16:00:00','2013-03-30 16:00:00');
+INSERT INTO `courserwork` VALUES (1,'1','第1章课后作业','1. 比较单道批处理OS、多道批处理OS、分时OS、实时OS的主要特征。 2. OS有哪些几大特征？其最基本的特征什么？','2013-03-04 16:00:00','2013-03-30 16:00:00'),(12,'1','测试2','测试2','2016-04-16 03:11:00','2016-04-15 05:33:00');
 /*!40000 ALTER TABLE `courserwork` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-09 13:06:18
+-- Dump completed on 2016-04-10  8:27:00

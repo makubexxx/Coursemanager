@@ -18,6 +18,8 @@ public class User {
 
 
 	public int user_type;
+	
+
 
 
 	public Long getUserid() {
@@ -78,6 +80,8 @@ public class User {
 	public void setUser_type(int user_type) {
 		this.user_type = user_type;
 	}
+
+
 
 
 

@@ -13,4 +13,6 @@ public interface ICourseworkuploadService {
 public Courseworkupload findbyid(int courseid,int userid);
 	
 public int insert(Courseworkupload courseworkupload);
+
+public int update(int courseworkid ,int userid,String score); 
 }

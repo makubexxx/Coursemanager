@@ -40,7 +40,7 @@
               <td><a href="/CourseManager/courseworkdetail?courseworkid=${coursework.courseworkid}">${coursework.courseworktitle}</a></td>
               <td class="am-hide-sm-only">${coursework.start_date}</td>
               <td class="am-hide-sm-only">${coursework.end_date}</td>
-              <td>${coursework.statuedescrpition} </td>
+              <td>${coursework.statue} </td>
             </tr>  
      </c:forEach>
 

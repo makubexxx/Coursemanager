@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `coursemanager` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `coursemanager`;
+-- MySQL dump 10.13  Distrib 5.6.13, for Win32 (x86)
 --
 -- Host: localhost    Database: coursemanager
 -- ------------------------------------------------------
@@ -26,7 +28,8 @@ CREATE TABLE `courseworkupload` (
   `courseworkid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `attachment` varchar(50) NOT NULL,
-  `content` text
+  `content` text,
+  `score` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -36,7 +39,7 @@ CREATE TABLE `courseworkupload` (
 
 LOCK TABLES `courseworkupload` WRITE;
 /*!40000 ALTER TABLE `courseworkupload` DISABLE KEYS */;
-INSERT INTO `courseworkupload` VALUES (1,1140611109,'\\CourseManager\\file\\download?fileName=oauth2.php','哼哼哼');
+INSERT INTO `courseworkupload` VALUES (1,1140611109,'\\CourseManager\\file\\download?fileName=oauth2.php','哼哼哼',98),(12,1140611109,'\\CourseManager\\file\\download?fileName=oauth2.php','你好吗',NULL);
 /*!40000 ALTER TABLE `courseworkupload` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-09 13:06:19
+-- Dump completed on 2016-04-10  8:27:01

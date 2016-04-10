@@ -11,4 +11,10 @@
     <select id="findDetailcourse" parameterType="int" resultType="ChoiceCourse">  
        select * from choicecourse where choiceid = #{choiceid}  order by start_date DESC
     </select> 
+    
+    
+     	<!--  查询学生全部选择课程  -->  
+    <select id="findBycourseid" parameterType="long" resultType="ChoiceCourse">  
+       select * from choicecourse where courseid = #{courseid}  order by start_date DESC
+    </select>  
  </mapper>

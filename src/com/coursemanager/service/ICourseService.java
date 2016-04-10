@@ -15,4 +15,6 @@ public interface ICourseService {
 	public List<ChoiceCourse> getallcoursebyuserid(long userid);
 	
 	public ChoiceCourse getdetailcourse(int choiceid);
+	
+	public List<ChoiceCourse> getchoiceCoursebyCourseid(long courseid);
 }

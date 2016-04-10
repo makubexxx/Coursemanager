@@ -13,4 +13,6 @@ public interface ChoiceCourseMapper {
 	
 	List<ChoiceCourse> findByuserid (long userid);
 	ChoiceCourse  findDetailcourse(int choiceid);
+	
+	List<ChoiceCourse> findBycourseid (long courseid);
 }

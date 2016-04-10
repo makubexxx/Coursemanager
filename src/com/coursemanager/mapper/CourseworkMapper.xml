@@ -3,7 +3,7 @@
 <mapper namespace="com.coursemanager.mapper.CourseworkMapper">
 
  <insert id="save" parameterType="Coursework">
-     insert into courserwork (belongcourseid,courseworktitle,start_date,end_date) values(#{belongcourseid},#{courseworktitle},#{start_date},#{end_date})
+     insert into courserwork (belongcourseid,courseworktitle,start_date,end_date,coursework_content) values(#{belongcourseid},#{courseworktitle},#{start_date},#{end_date},#{coursework_content})
  </insert>
  
  

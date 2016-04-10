@@ -30,7 +30,7 @@
           <table class="am-table am-table-striped am-table-hover table-main">
             <thead>
               <tr>
-   <th class="table-title">作业题目</th><th class="table-title">生效日期</th><th class="table-type">截止日期</th><th class="table-type">提交状态</th>
+   <th class="table-title">作业题目</th><th class="table-title">生效日期</th><th class="table-type">截止日期</th><th>其他</th>
               </tr>
           </thead>
           <tbody>
@@ -39,8 +39,17 @@
 
         <tr>
               <td><a href="/CourseManager/courseworkdetail?courseworkid=${coursework.courseworkid}">${coursework.courseworktitle}</a></td>
-              <td class="am-hide-sm-only">${coursework.start_date}</td>
-              <td class="am-hide-sm-only">${coursework.end_date}</td>
+              <td class="am-hide-sm-only">${coursework.startdate}</td>
+              <td class="am-hide-sm-only">${coursework.enddate}</td>
+              <td>
+               <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                    </div>
+                    </td>
             </tr>  
      </c:forEach>
 
@@ -66,12 +75,12 @@
 
        <div class="am-form-group">
       <label for="doc-ipt-email-1">开始时间</label>
-      <input type="date" class=""  id="startdate"placeholder="开始时间">
+      <input type="datetime-local" class=""  id="startdate"placeholder="开始时间">
     </div>
 
     <div class="am-form-group">
       <label for="doc-ipt-email-1">结束时间</label>
-      <input type="date" class=""  id="enddate"placeholder="结束时间">
+      <input type="datetime-local" class=""  id="enddate"placeholder="结束时间">
     </div>
 
     <p><input type="button" class="am-btn am-btn-default" id="submit" value="提交"/></p>
