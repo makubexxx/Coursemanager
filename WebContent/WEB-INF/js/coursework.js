@@ -8,10 +8,6 @@ $(document).ready(function(){
 			 
 			    var date1 = new Date(Date.parse(startdate));  
 	            var date2 = new Date(Date.parse(enddate));  
-	            if (date1.getTime() > date2.getTime()) {  
-	                alert("结束时间不得小于开始时间。");  
-	                return false;  
-	            }  
 			 console.log("title:"+title);
 			 console.log("content:"+content);
 			 console.log("startdate:"+startdate);
@@ -49,9 +45,3 @@ $(document).ready(function(){
 
 });
 
-function deletecoursework()
-{
-		 var deletebutton=$(".am-btn am-btn-danger")attr("courseworkid");
-		 alert(deletebutton);
-	  
-}
